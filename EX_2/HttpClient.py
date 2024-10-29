@@ -32,7 +32,7 @@ def parse_response(resp):
 # from sample in Sakai
 def connect(url):
     # try connecting
-    
+    # source Sakai receources with a bit of modification
     try:
         print("trying to connect...")
         # split url in to host (eg. google.com) and path but limit to 3
@@ -65,7 +65,8 @@ def connect(url):
         print("closed socket")
         return data
     except:
-        print("Ein Fehler ist aufgetreten, url : ", url) 
+        print("Sorry, error parsing url, make sure url has this format : http(s)://example.com/path/to/resource...")
+        exit(1)
 
 # check if we have enough arguments
 if(len(sys.argv) == 1):
